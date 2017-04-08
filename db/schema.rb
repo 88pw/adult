@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408105216) do
+ActiveRecord::Schema.define(version: 20170408114608) do
 
   create_table "actresses", force: :cascade do |t|
     t.string   "name",                    null: false
@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(version: 20170408105216) do
     t.integer  "sex",         default: 0, null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",         null: false
+    t.text     "description"
+    t.integer  "actress_id",    null: false
+    t.string   "thumbnail_url"
+    t.float    "review_score"
+    t.string   "service_url",   null: false
+    t.integer  "service_id"
+    t.string   "ad_url"
+    t.integer  "series_id"
+    t.integer  "director_id"
+    t.integer  "label_id"
+    t.integer  "maker_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["actress_id"], name: "index_posts_on_actress_id"
   end
 
 end

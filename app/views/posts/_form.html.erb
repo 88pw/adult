@@ -1,0 +1,77 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :actress_id %>
+    <%= f.number_field :actress_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :thumbnail_url %>
+    <%= f.text_field :thumbnail_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :review_score %>
+    <%= f.text_field :review_score %>
+  </div>
+
+  <div class="field">
+    <%= f.label :service_url %>
+    <%= f.text_field :service_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :service_id %>
+    <%= f.number_field :service_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ad_url %>
+    <%= f.text_field :ad_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :series_id %>
+    <%= f.number_field :series_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :director_id %>
+    <%= f.number_field :director_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :label_id %>
+    <%= f.number_field :label_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maker_id %>
+    <%= f.number_field :maker_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
