@@ -1,0 +1,46 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @actress.name
+%p
+  %strong Initial:
+  = @actress.initial
+%p
+  %strong Bust:
+  = @actress.bust
+%p
+  %strong Waist:
+  = @actress.waist
+%p
+  %strong Hip:
+  = @actress.hip
+%p
+  %strong Height:
+  = @actress.height
+%p
+  %strong Birth:
+  = @actress.birth
+%p
+  %strong Blood type:
+  = @actress.blood_type
+%p
+  %strong Ruby:
+  = @actress.ruby
+%p
+  %strong Birth place:
+  = @actress.birth_place
+%p
+  %strong Image lg:
+  = @actress.image_lg
+%p
+  %strong Image sm:
+  = @actress.image_sm
+%p
+  %strong Sex:
+  = @actress.sex
+%ul
+  - @actress.posts.each do | post |
+    %li= post.title
+= link_to 'Edit', edit_actress_path(@actress)
+|
+= link_to 'Back', actresses_path

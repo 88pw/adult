@@ -1,0 +1,47 @@
+= form_for(post) do |f|
+  - if post.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(post.errors.count, "error")
+        prohibited this post from being saved:
+      %ul
+        - post.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :actress_id
+    = f.collection_select :actress_id, Actress.all, :id, :name
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :thumbnail_url
+    = f.text_field :thumbnail_url
+  .field
+    = f.label :review_score
+    = f.text_field :review_score
+  .field
+    = f.label :service_url
+    = f.text_field :service_url
+  .field
+    = f.label :service_id
+    = f.number_field :service_id
+  .field
+    = f.label :ad_url
+    = f.text_field :ad_url
+  .field
+    = f.label :series_id
+    = f.number_field :series_id
+  .field
+    = f.label :director_id
+    = f.number_field :director_id
+  .field
+    = f.label :label_id
+    = f.number_field :label_id
+  .field
+    = f.label :maker_id
+    = f.number_field :maker_id
+  .actions
+    = f.submit

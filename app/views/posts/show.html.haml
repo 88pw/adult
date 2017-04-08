@@ -1,0 +1,40 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @post.title
+%p
+  %strong Description:
+  = @post.description
+%p
+  %strong Actress:
+  = @post.actress_id
+%p
+  %strong Thumbnail url:
+  = @post.thumbnail_url
+%p
+  %strong Review score:
+  = @post.review_score
+%p
+  %strong Service url:
+  = @post.service_url
+%p
+  %strong Service:
+  = @post.service_id
+%p
+  %strong Ad url:
+  = @post.ad_url
+%p
+  %strong Series:
+  = @post.series_id
+%p
+  %strong Director:
+  = @post.director_id
+%p
+  %strong Label:
+  = @post.label_id
+%p
+  %strong Maker:
+  = @post.maker_id
+= link_to 'Edit', edit_post_path(@post)
+|
+= link_to 'Back', posts_path

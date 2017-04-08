@@ -1,0 +1,38 @@
+%p#notice= notice
+%h1 Posts
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Actress
+      %th Thumbnail url
+      %th Review score
+      %th Service url
+      %th Service
+      %th Ad url
+      %th Series
+      %th Director
+      %th Label
+      %th Maker
+      %th{:colspan => "3"}
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.description
+        %td= post.actress_id
+        %td= post.thumbnail_url
+        %td= post.review_score
+        %td= post.service_url
+        %td= post.service_id
+        %td= post.ad_url
+        %td= post.series_id
+        %td= post.director_id
+        %td= post.label_id
+        %td= post.maker_id
+        %td= link_to 'Show', post
+        %td= link_to 'Edit', edit_post_path(post)
+        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Post', new_post_path

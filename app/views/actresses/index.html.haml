@@ -1,0 +1,38 @@
+%p#notice= notice
+%h1 Actresses
+%table
+  %thead
+    %tr
+      %th.col-xs-6 Name
+      %th Initial
+      %th Bust
+      %th Waist
+      %th Hip
+      %th Height
+      %th Birth
+      %th Blood type
+      %th Ruby
+      %th Birth place
+      %th Image lg
+      %th Image sm
+      %th{:colspan => "3"}
+  %tbody
+    - @actresses.each do |actress|
+      %tr
+        %td.col-xs-6= actress.name
+        %td= actress.initial
+        %td= actress.bust
+        %td= actress.waist
+        %td= actress.hip
+        %td= actress.height
+        %td= actress.birth
+        %td= actress.blood_type
+        %td= actress.ruby
+        %td= actress.birth_place
+        %td= actress.image_lg
+        %td= actress.image_sm
+        %td= link_to 'Show', actress
+        %td= link_to 'Edit', edit_actress_path(actress)
+        %td= link_to 'Destroy', actress, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Actress', new_actress_path

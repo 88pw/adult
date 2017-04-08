@@ -1,0 +1,50 @@
+= form_for(actress) do |f|
+  - if actress.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(actress.errors.count, "error")
+        prohibited this actress from being saved:
+      %ul
+        - actress.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :initial
+    = f.text_field :initial
+  .field
+    = f.label :bust
+    = f.number_field :bust
+  .field
+    = f.label :waist
+    = f.number_field :waist
+  .field
+    = f.label :hip
+    = f.number_field :hip
+  .field
+    = f.label :height
+    = f.number_field :height
+  .field
+    = f.label :birth
+    = f.date_select :birth
+  .field
+    = f.label :blood_type
+    = f.text_field :blood_type
+  .field
+    = f.label :ruby
+    = f.text_field :ruby
+  .field
+    = f.label :birth_place
+    = f.text_field :birth_place
+  .field
+    = f.label :image_lg
+    = f.text_field :image_lg
+  .field
+    = f.label :image_sm
+    = f.text_field :image_sm
+  .field
+    = f.label :sex
+    = f.number_field :sex
+  .actions
+    = f.submit
