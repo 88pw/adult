@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  initial: MyString
+  bust: 1
+  waist: 1
+  hip: 1
+  height: 1
+  birth: 2017-04-08
+  blood_type: MyString
+  ruby: MyString
+  birth_place: MyString
+  image_lg: MyString
+  image_sm: MyString
+
+two:
+  name: MyString
+  initial: MyString
+  bust: 1
+  waist: 1
+  hip: 1
+  height: 1
+  birth: 2017-04-08
+  blood_type: MyString
+  ruby: MyString
+  birth_place: MyString
+  image_lg: MyString
+  image_sm: MyString
