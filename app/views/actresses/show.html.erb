@@ -65,5 +65,10 @@
   <%= @actress.sex %>
 </p>
 
+<ul>
+  <% @actress.posts.each do | post | %>
+    <li><%= post.title %></li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_actress_path(@actress) %> |
 <%= link_to 'Back', actresses_path %>

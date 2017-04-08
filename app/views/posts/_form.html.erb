@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :actress_id %>
+    <%= f.collection_select :actress_id, Actress.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
@@ -19,11 +24,6 @@
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :actress_id %>
-    <%= f.number_field :actress_id %>
   </div>
 
   <div class="field">
