@@ -30,6 +30,18 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+  
+  config.action_mailer.default_url_options = { host: "adult-wbcre8.c9users.io" , port: 8080 }
+
+  config.action_mailer.smtp_settings = {
+    enable_starttls_auto: true,
+    adress: "smtp.gmail.com",
+    port: 587,
+    domain: "smtp.gmail.com",
+    user_name: "88patchiworks@gmail.com",
+    password: "mitsukuni00",
+    authentication: "login"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

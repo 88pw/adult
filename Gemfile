@@ -36,7 +36,7 @@ gem 'bootstrap-sass'
 # gem 'capistrano-rails', group: :development
 gem 'haml-rails'
 gem 'erb2haml'
-
+gem 'devise'
 
 
 group :development, :test do
