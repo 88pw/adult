@@ -3,7 +3,6 @@ require 'nokogiri'
 require 'json'
 
 class ParseDmmServise
-   
     
 	# 与えられたクエリでDMMを検索し、実行結果をハッシュ形式で返す(最大5件)
 	def search_dmm(str,agent)
@@ -49,16 +48,22 @@ class ParseDmmServise
 		nokogiri = Nokogiri::HTML(page.body)
 	
 		top = nokogiri.xpath('//td[@valign="top"]')
+		actresses = top.xpath('table/tr[5]/td[2]//a').map do |actress|
+				hash = {
+					name: actress.text,
+					identifier: actress.to_s.match(/id=(.*?)\//)[1],
+				}
+		end
 		{
 			title: page.title.split(" - ").slice(0..-3).join(""),
 			img_url: nokogiri.xpath('//*[@id="sample-video"]//img/@src').to_s,
 			description: top.xpath('div[4]/text()')[0].to_s.gsub(/\n/, ""),
 			series: top.xpath('table/tr[7]/td[2]/a').text(),
-			maker: top.xpath('table/tr[8]/td[2]/a').text(),
 			label: top.xpath('table/tr[9]/td[2]/a').text(),
 			genre: top.xpath('table/tr[10]/td[2]/a').map{|g| g.text},
 			identifier: top.xpath('table/tr[11]/td[2]').text,
-			review_score: review_helper(top.xpath('table/tr[12]/td[2]/img/@src').text())
+			review_score: review_helper(top.xpath('table/tr[12]/td[2]/img/@src').text()),
+			actresses: actresses,
 		}
 		rescue
 			nil
